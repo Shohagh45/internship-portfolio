@@ -18,6 +18,7 @@ demos.
 | [guarded-export](./guarded-export) | Defensive backend engineering | Double-submit locking, size pre-flight guard, validation, graceful errors |
 | [ics-calendar-feed](./ics-calendar-feed) | Security / applied crypto | HMAC-signed, per-user, revocable calendar subscription tokens + RFC 5545 ICS output |
 | [faq-chatbot](./faq-chatbot) | Applied AI / retrieval | Embedding-based FAQ retrieval, cosine similarity, confidence thresholds & suggestions |
+| [jira-helpdesk](./jira-helpdesk) | API integration | In-app form → Jira Service Desk ticket over REST, testable transport, env-based config |
 
 Each module has its own README, a `src/` with the core class(es), and an
 `examples/` script you can run directly.
@@ -30,6 +31,7 @@ All demos are plain PHP and need **no API keys, database, or framework**:
 php guarded-export/examples/demo.php
 php ics-calendar-feed/examples/demo.php
 php faq-chatbot/examples/demo.php
+php jira-helpdesk/examples/demo.php
 ```
 
 (PHP 8.0+ recommended.)
