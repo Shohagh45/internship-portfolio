@@ -1,0 +1,21 @@
+# Dependencies
+/vendor/
+composer.phar
+
+# Env / secrets — never commit
+.env
+.env.*
+*.key
+*.pem
+config.local.php
+
+# Logs & runtime
+*.log
+/logs/
+
+# Editor / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
