@@ -11,7 +11,7 @@ included here — only descriptions.
 
 | # | Area | Runnable module here |
 |---|------|----------------------|
-| 1 | Admin (Beheer) controller & model | — |
+| 1 | Admin (Beheer) controller & model | [config-driven-crud](./config-driven-crud) |
 | 2 | Guarded data export | [guarded-export](./guarded-export) |
 | 3 | Agenda data model & defensive DB guards | — |
 | 4 | Microsoft 365 / Graph calendar sync | [ms365-calendar-sync](./ms365-calendar-sync) |
@@ -22,9 +22,14 @@ included here — only descriptions.
 | 8 | Department rights seeding, config toggles | — |
 
 ## 1. Admin (Beheer) controller & model
-Built an admin module (controller + model) with its own configuration and
-documentation — the starting point of the internship and a first pass at the
-codebase's MVC conventions.
+Built the back-office admin module (controller + model, ~2,000 lines) that
+manages the system's many lookup lists (labels, products, categories, contact
+types, statuses, reasons, …). Rather than a bespoke controller/model per list, I
+drove them from a **data dictionary**: each entity is described once (table, id,
+per-operation columns, defaults, audit messages) and a single generic engine
+performs list/create/update/delete for all of them — with input whitelisting so
+only configured columns are ever written. → the pattern is extracted as
+**config-driven-crud**.
 
 ## 2. Guarded data export
 Hardened the Excel export path: a guard that prevents double-submits with a

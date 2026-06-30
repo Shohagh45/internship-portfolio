@@ -15,6 +15,7 @@ demos.
 
 | Module | What it demonstrates | Highlights |
 |---|---|---|
+| [config-driven-crud](./config-driven-crud) | Architecture / DRY back-office | One metadata-driven engine for all admin lookup screens; mass-assignment-safe |
 | [guarded-export](./guarded-export) | Defensive backend engineering | Double-submit locking, size pre-flight guard, validation, graceful errors |
 | [ms365-calendar-sync](./ms365-calendar-sync) | OAuth2 / API integration | Microsoft Graph OAuth (code + refresh), idempotent `/me/events` upsert |
 | [ics-calendar-feed](./ics-calendar-feed) | Security / applied crypto | HMAC-signed, per-user, revocable calendar subscription tokens + RFC 5545 ICS output |
@@ -33,6 +34,7 @@ Each module has its own README, a `src/` with the core class(es), and an
 All demos are plain PHP and need **no API keys, database, or framework**:
 
 ```bash
+php config-driven-crud/examples/demo.php
 php guarded-export/examples/demo.php
 php ms365-calendar-sync/examples/demo.php
 php ics-calendar-feed/examples/demo.php
