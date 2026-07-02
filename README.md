@@ -20,6 +20,7 @@ demos.
 | [ms365-calendar-sync](./ms365-calendar-sync) | OAuth2 / API integration | Microsoft Graph OAuth (code + refresh), idempotent `/me/events` upsert |
 | [ics-calendar-feed](./ics-calendar-feed) | Security / applied crypto | HMAC-signed, per-user, revocable calendar subscription tokens + RFC 5545 ICS output |
 | [acl-authorization](./acl-authorization) | Authorization / security | Deny-by-default RBAC, tolerant name + synonym resolution, env kill-switch |
+| [audit-session-log](./audit-session-log) | Auditing / security | Department-aware audit trail + idle-session timeout that audits its own logout |
 | [faq-chatbot](./faq-chatbot) | Applied AI / retrieval | Embedding-based FAQ retrieval, cosine similarity, confidence thresholds & suggestions |
 | [jira-helpdesk](./jira-helpdesk) | API integration | In-app form → Jira Service Desk ticket over REST, testable transport, env-based config |
 
@@ -39,6 +40,7 @@ php guarded-export/examples/demo.php
 php ms365-calendar-sync/examples/demo.php
 php ics-calendar-feed/examples/demo.php
 php acl-authorization/examples/demo.php
+php audit-session-log/examples/demo.php
 php faq-chatbot/examples/demo.php
 php jira-helpdesk/examples/demo.php
 ```

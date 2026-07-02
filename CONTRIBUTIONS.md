@@ -17,6 +17,7 @@ included here — only descriptions.
 | 4 | Microsoft 365 / Graph calendar sync | [ms365-calendar-sync](./ms365-calendar-sync) |
 | 4 | ICS calendar subscription feed | [ics-calendar-feed](./ics-calendar-feed) |
 | 5 | Access control (RBAC) & search | [acl-authorization](./acl-authorization) |
+| 5 | Audit trail (department tracking) + idle-session timeout | [audit-session-log](./audit-session-log) |
 | 6 | Jira Service Desk helpdesk integration | [jira-helpdesk](./jira-helpdesk) |
 | 7 | FAQ chatbot | [faq-chatbot](./faq-chatbot) |
 | 8 | Department rights seeding, config toggles | — |
@@ -61,6 +62,16 @@ The largest feature. Two complementary halves:
   → extracted as **acl-authorization**.
 - **Search** — a global keyword search wired from the sidebar/menu and home
   page, supporting GET/POST with input persistence.
+
+## 5b. Audit trail (department tracking) + idle-session timeout
+Extended the action-audit log to capture **which department (participant)** a
+user was acting under for each action — adding an `fk_participant` column, wiring
+it through the `actionLog()` controller helper and logger model, and joining the
+participants table into the audit overviews so each action shows its department.
+Paired with a **30-minute idle-session timeout** that writes a
+`session_timeout_logout` audit entry before clearing the session, so automatic
+logouts are visible alongside manual actions. → extracted as
+**audit-session-log**.
 
 ## 6. Jira Service Desk helpdesk integration
 Connected the in-app FAQ/helpdesk form to **Jira Service Management** over REST:
